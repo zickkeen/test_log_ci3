@@ -428,7 +428,6 @@ class CI_Table {
 		$this->rows = array();
 		$this->heading = array();
 		$this->auto_heading = TRUE;
-		$this->caption = NULL;
 		return $this;
 	}
 

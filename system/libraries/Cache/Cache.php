@@ -56,7 +56,6 @@ class CI_Cache extends CI_Driver_Library {
 	 */
 	protected $valid_drivers = array(
 		'apc',
-		'apcu',
 		'dummy',
 		'file',
 		'memcached',
@@ -253,17 +252,5 @@ class CI_Cache extends CI_Driver_Library {
 		}
 
 		return $support[$driver];
-	}
-
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Get currently loaded driver
-	 *
-	 * @return string
-	 */
-	public function get_loaded_driver()
-	{
-		return $this->_adapter;
 	}
 }

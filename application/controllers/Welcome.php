@@ -20,6 +20,17 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+        // Mendapatkan string URI secara keseluruhan (setelah base URL)
+        $uri_string = $this->uri->uri_string();
+
+		return $this->output
+			->set_content_type('application/json')
+			->set_status_header(200)
+			->set_output(json_encode([
+				'text' => 'Test',
+				'message' => $uri_string,
+				'type' => 'success'
+			]));
+		// $this->load->view('welcome_message');
 	}
 }
