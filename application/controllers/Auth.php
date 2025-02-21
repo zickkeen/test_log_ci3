@@ -11,11 +11,18 @@ class Auth extends CI_Controller {
     }
 
     public function login() {
+        $data['title'] = 'Login';
+        $data['header'] = 'Selamat Datang di Halaman Login';
+        // $data['css'] = array('login.css'); // Jika ada file CSS khusus untuk login
+        // $data['js'] = array('login.js'); // Jika ada file JS khusus untuk login
+        
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('auth/login_form'); // Tampilkan form login
+            // $this->load->view('auth/login_form'); // Tampilkan form login
+            $data['content'] = $this->load->view('auth/login_form', '', true);
+            $this->load->view('layout', $data);
         } else {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
@@ -25,7 +32,7 @@ class Auth extends CI_Controller {
             if ($user && password_verify($password, $user->password)) {
                 // Login berhasil
                 $this->session->set_userdata('user_id', $user->id);
-                redirect('welcome'); // Redirect ke halaman dashboard
+                redirect('dashboard');
             } else {
                 // Login gagal
                 $this->session->set_flashdata('error', 'Username atau password salah.');
@@ -35,11 +42,16 @@ class Auth extends CI_Controller {
     }
 
     public function register() {
+        $data['title'] = 'Register';
+        $data['header'] = 'Selamat Datang di Halaman Register';
+
         $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('auth/register_form'); // Tampilkan form registrasi
+            // $this->load->view('auth/register_form');
+            $data['content'] = $this->load->view('auth/register_form', '', true);
+            $this->load->view('layout', $data);
         } else {
             $data = array(
                 'username' => $this->input->post('username'),

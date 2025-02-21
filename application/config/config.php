@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+// $config['base_url'] = '';
+// $config['base_url'] = 'http://9000-idx-codeigniter-1739973832291.cluster-e3wv6awer5h7kvayyfoein2u4a.cloudworkstations.dev/';
 
 /*
 |--------------------------------------------------------------------------
