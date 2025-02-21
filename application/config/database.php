@@ -95,35 +95,13 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-// $db['default'] = array(
-//     'dsn' => '',
-//     'hostname' => '', 
-//     'username' => '',
-//     'password' => '', 
-//     'database' => './database.db', 
-//     'dbdriver' => 'sqlite3', 
-//     'dbprefix' => '',
-//     'pconnect' => FALSE,
-//     'db_debug' => (ENVIRONMENT !== 'production'),
-//     'cache_on' => FALSE,
-//     'cachedir' => '',
-//     'char_set' => 'utf8',
-//     'dbcollat' => 'utf8_general_ci',
-//     'swap_pre' => '',
-//     'encrypt' => FALSE,
-//     'compress' => FALSE,
-//     'stricton' => FALSE,
-//     'failover' => array(),
-//     'save_queries' => TRUE
-// );
-
 $db['default'] = array(
-    'dsn' => '', // Biarkan kosong
-    'hostname' => '/tmp/mysql/mysql.sock', 
-    'username' => 'root',
-    'password' => '',
-    'database' => 'test_ci',
-    'dbdriver' => 'mysqli',
+    'dsn' => '',
+    'hostname' => '', 
+    'username' => '',
+    'password' => '', 
+    'database' => './database.db', 
+    'dbdriver' => 'sqlite3', 
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
@@ -138,3 +116,24 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
+
+// $db['default'] = array(
+//     'dsn' => '', // Biarkan kosong
+//     'hostname' => getenv('DB_HOST') ? getenv('DB_HOST') : 'localhost', // Baca dari ENV, default 'localhost'
+//     'username' => getenv('DB_USER') ? getenv('DB_USER') : '',      // Baca dari ENV
+//     'password' => getenv('DB_PASSWORD') ? getenv('DB_PASSWORD') : '',  // Baca dari ENV
+//     'database' => getenv('DB_NAME') ? getenv('DB_NAME') : '',
+//     'dbprefix' => '',
+//     'pconnect' => FALSE,
+//     'db_debug' => (ENVIRONMENT !== 'production'),
+//     'cache_on' => FALSE,
+//     'cachedir' => '',
+//     'char_set' => 'utf8',
+//     'dbcollat' => 'utf8_general_ci',
+//     'swap_pre' => '',
+//     'encrypt' => FALSE,
+//     'compress' => FALSE,
+//     'stricton' => FALSE,
+//     'failover' => array(),
+//     'save_queries' => TRUE
+// );

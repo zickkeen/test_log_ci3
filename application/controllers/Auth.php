@@ -13,8 +13,6 @@ class Auth extends CI_Controller {
     public function login() {
         $data['title'] = 'Login';
         $data['header'] = 'Selamat Datang di Halaman Login';
-        // $data['css'] = array('login.css'); // Jika ada file CSS khusus untuk login
-        // $data['js'] = array('login.js'); // Jika ada file JS khusus untuk login
         
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
@@ -56,6 +54,8 @@ class Auth extends CI_Controller {
             $data = array(
                 'username' => $this->input->post('username'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'email' => $this->input->post('email'),
+                'created_at' => date('Y-m-d H:i:s')
             );
 
             if ($this->User_model->insert_user($data)) {

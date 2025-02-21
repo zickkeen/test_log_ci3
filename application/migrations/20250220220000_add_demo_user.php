@@ -7,8 +7,9 @@ class Migration_Add_demo_user extends CI_Migration {
         if ($this->db->table_exists('users')) {
             $demo_user = array(
                 'username' => 'demo',
-                'password' => password_hash('password', PASSWORD_DEFAULT), // Password "password" di-hash
-                'email' => 'demo@example.com' // Ganti dengan email demo Anda
+                'password' => password_hash('password', PASSWORD_DEFAULT),
+                'email' => 'demo@example.com',
+                'created_at' => date('Y-m-d H:i:s')  // Tambahkan baris ini
             );
 
             // Periksa apakah user demo sudah ada

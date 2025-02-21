@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    image: zickkeen/ci3_demo
+    container_name: ci3_demo
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: 192.168.1.128
+      DB_USER: test_ci3
+      DB_PASSWORD: Percobaan
+      DB_NAME: ci3_demo
+    volumes:
+      - ./database.db:/var/www/html/database.db
